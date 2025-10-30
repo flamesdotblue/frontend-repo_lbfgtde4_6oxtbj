@@ -1,28 +1,28 @@
-import { useState } from 'react'
+import React from 'react';
+import Navbar from './components/Navbar';
+import Hero from './components/Hero';
+import Collections from './components/Collections';
+import Footer from './components/Footer';
 
-function App() {
-  const [count, setCount] = useState(0)
-
+export default function App() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
-        </div>
-      </div>
+    <div className="min-h-screen bg-black text-white font-inter">
+      <Navbar />
+      <main>
+        <Hero />
+        <section id="ethos" className="py-24 border-t border-white/10 bg-gradient-to-b from-black via-zinc-950 to-black">
+          <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
+            <h2 className="text-3xl sm:text-4xl font-semibold">The WatchX Ethos</h2>
+            <p className="mt-4 text-white/70 leading-relaxed">
+              We pursue quiet excellence. Every WatchX piece strips away the unnecessary,
+              honoring classic silhouettes while embracing modern materials and precision engineering.
+              Minimal doesn’t mean less — it means only what matters remains.
+            </p>
+          </div>
+        </section>
+        <Collections />
+      </main>
+      <Footer />
     </div>
-  )
+  );
 }
-
-export default App
